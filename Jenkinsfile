@@ -24,7 +24,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git url: 'https://github.com/sridhar8642/Simple_jenkins_pipeline.git',
-                    branch: 'master',
+                    branch: 'main',
                     credentialsId: 'github-creds'
             }
         }
