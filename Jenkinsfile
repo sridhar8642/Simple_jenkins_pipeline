@@ -17,15 +17,15 @@ pipeline {
                 sh '''
                   apt-get update
                   apt-get install -y openjdk-17-jdk git
-                  java -version
-                  git --version
                 '''
             }
         }
 
         stage('Checkout Code') {
             steps {
-                git 'https://github.com/sridhar8642/Simple_jenkins_pipeline.git'
+                git url: 'https://github.com/sridhar8642/Simple_jenkins_pipeline.git',
+                    branch: 'master',
+                    credentialsId: 'github-creds'
             }
         }
 
