@@ -6,14 +6,19 @@ pipeline {
         }
     }
 
+    options {
+        skipDefaultCheckout(true)
+    }
+
     stages {
 
-        stage('Install Java') {
+        stage('Install Java & Git') {
             steps {
                 sh '''
                   apt-get update
                   apt-get install -y openjdk-17-jdk git
                   java -version
+                  git --version
                 '''
             }
         }
